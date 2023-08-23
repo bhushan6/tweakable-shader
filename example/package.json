@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@babylonjs/core": "^6.17.0"
+    "@babylonjs/core": "^6.17.0",
+    "tweakable-shader": "^0.0.2"
   }
 }
