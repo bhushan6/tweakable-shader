@@ -68,6 +68,8 @@ The package will automatically parse these comments and generate the appropriate
 
 ## Examples
 
+[Live demo](https://tweakable-shader.vercel.app/) of below example
+
 ```javascript
 import * as BABYLON from "@babylonjs/core";
 import { TweakableShader } from "tweakable-shader";
