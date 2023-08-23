@@ -6,6 +6,8 @@
 
 Inspired by [this](https://github.com/luruke/magicshader/tree/master) three js package
 
+![Description of GIF](https://github.com/bhushan6/tweakable-shader/raw/862a72a93d5426f090c1e4a96c8309ed7c12e59c/example/public/tweakbale.gif)
+
 ## Supported Data Types
 
 The package currently supports the following data types for uniforms:
