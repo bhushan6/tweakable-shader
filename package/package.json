@@ -1,7 +1,6 @@
 {
   "name": "tweakable-shader",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "keywords": [
     "babylon",
@@ -10,12 +9,16 @@
     "webgl"
   ],
   "author": "Bhushan Wagh (https://github.com/bhushan6)",
+  "bugs": {
+    "url": "https://github.com/bhushan6/tweakable-shader/issues"
+  },
+  "homepage": "https://github.com/bhushan6/tweakable-shader#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "publish:patch": "npm version patch && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
-    "publish:minor": "npm version minor && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
-    "publish:major": "npm version major && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
+    "publish:patch": "npm version patch && npm run build && npm publish",
+    "publish:minor": "npm version minor && npm run build && npm publish",
+    "publish:major": "npm version major && npm run build && npm publish",
     "preview": "vite preview"
   },
   "devDependencies": {
