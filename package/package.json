@@ -1,0 +1,37 @@
+{
+  "name": "tweakable-shader",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "keywords": [
+    "babylon",
+    "msdf",
+    "text-rendering",
+    "webgl"
+  ],
+  "author": "Bhushan Wagh (https://github.com/bhushan6)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "publish:patch": "npm version patch && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
+    "publish:minor": "npm version minor && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
+    "publish:major": "npm version major && npm run build && npm publish && sleep 10 && cd ../example && npm install tweakable-shader@latest",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/tweakable-shader.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tweakable-shader.es.js"
+    }
+  },
+  "dependencies": {
+    "tweakpane": "^4.0.0"
+  }
+}
