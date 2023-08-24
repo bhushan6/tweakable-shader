@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@babylonjs/core": "^6.17.0",
-    "tweakable-shader": "^0.0.2"
+    "tweakable-shader": "^0.0.5"
   }
 }

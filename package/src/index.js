@@ -254,4 +254,6 @@ class TweakableShader {
   }
 }
 
+window.TweakableShader = TweakableShader;
+
 export { TweakableShader };

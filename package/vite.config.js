@@ -17,7 +17,7 @@ export default defineConfig((mode) => {
       lib: {
         entry: path.resolve(__dirname, "src/index.js"),
         name: "tweakable-shader",
-        formats: ["es"],
+        formats: ["es", "umd"],
         fileName: (format) => `tweakable-shader.${format}.js`,
       },
       rollupOptions: {
