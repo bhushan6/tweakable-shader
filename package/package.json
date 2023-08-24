@@ -4,8 +4,9 @@
   "type": "module",
   "keywords": [
     "babylon",
-    "msdf",
-    "text-rendering",
+    "shader",
+    "glsl",
+    "GUI",
     "webgl"
   ],
   "author": "Bhushan Wagh (https://github.com/bhushan6)",
