@@ -6,6 +6,8 @@
 
 Inspired by [this](https://github.com/luruke/magicshader/tree/master) three js package
 
+![Description of GIF](https://github.com/bhushan6/tweakable-shader/raw/862a72a93d5426f090c1e4a96c8309ed7c12e59c/example/public/tweakbale.gif)
+
 ## Supported Data Types
 
 The package currently supports the following data types for uniforms:
@@ -53,7 +55,7 @@ The TweakableShader class is used to create a shader material with GUI. It accep
 
 - `name`: It is first parameter, which is passed to shader material as name and also used as folder name in Tweakpane. So its needs to be unique for each instance (required).
 - `scene`: Babylon js scene in which shader material is being used
-- `options`: You can pass all the shader material options here the way you'll pass it to babylon's shader material, except vertex shader and fragmentsshader code should be passed using `vertexShader` and `fragmentShader` as shown above.
+- `options`: You can pass all the shader material options here the way you'll pass it to babylon's shader material, except vertex shader and fragment shader code should be passed using `vertexShader` and `fragmentShader` as shown above.
 
 ## GUI Configuration
 
@@ -67,6 +69,8 @@ uniform float brightness; // ts({ value: 1.0, min: 0, max:1.0, step: 0.1 })
 The package will automatically parse these comments and generate the appropriate GUI using Tweakpane
 
 ## Examples
+
+[Live demo](https://tweakable-shader.vercel.app/) of below example
 
 ```javascript
 import * as BABYLON from "@babylonjs/core";
