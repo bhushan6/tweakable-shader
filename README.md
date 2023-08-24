@@ -55,7 +55,7 @@ The TweakableShader class is used to create a shader material with GUI. It accep
 
 - `name`: It is first parameter, which is passed to shader material as name and also used as folder name in Tweakpane. So its needs to be unique for each instance (required).
 - `scene`: Babylon js scene in which shader material is being used
-- `options`: You can pass all the shader material options here the way you'll pass it to babylon's shader material, except vertex shader and fragmentsshader code should be passed using `vertexShader` and `fragmentShader` as shown above.
+- `options`: You can pass all the shader material options here the way you'll pass it to babylon's shader material, except vertex shader and fragment shader code should be passed using `vertexShader` and `fragmentShader` as shown above.
 
 ## GUI Configuration
 
