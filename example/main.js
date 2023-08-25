@@ -53,10 +53,12 @@ const shaderMaterial = new TweakableShader("shader-material", scene, {
   fragmentShader: `precision highp float;
                 uniform vec3 color; // ts({ value: {r: 0, g: 255, b: 214, a: 0.5} })
                 uniform float brightness; // ts({ value: 1.0, min: 0, max:1.0, step: 0.1 })
+                uniform float uTime;
                 void main() {
-                    gl_FragColor = vec4(color , brightness);
+                    gl_FragColor = vec4(color, brightness * (sin(uTime * 0.05)+1.) - 1.);
                 }`,
   needAlphaBlending: true,
+  timeUniform: { name: "uTime" },
 });
 
 box.material = shaderMaterial;
