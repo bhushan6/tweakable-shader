@@ -66,15 +66,16 @@ class TweakableShader {
   }
 
   initShaderMaterial() {
-    BABYLON.Effect.ShadersStore["customVertexShader"] = this.vertexShader;
-    BABYLON.Effect.ShadersStore["customFragmentShader"] = this.fragmentShader;
+    BABYLON.Effect.ShadersStore[`${this.name}VertexShader`] = this.vertexShader;
+    BABYLON.Effect.ShadersStore[`${this.name}FragmentShader`] =
+      this.fragmentShader;
 
     this.material = new BABYLON.ShaderMaterial(
       this.name,
       this.scene,
       {
-        vertex: "custom",
-        fragment: "custom",
+        vertex: this.name,
+        fragment: this.name,
       },
       {
         ...this.options,
