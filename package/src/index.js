@@ -13,7 +13,8 @@ const pane = new Pane();
 
 class TweakableShader {
   constructor(name, scene, options = {}) {
-    const { vertexShader, fragmentShader, uniforms, ...rest } = options;
+    const { vertexShader, fragmentShader, uniforms, timeUniform, ...rest } =
+      options;
 
     if (uniforms) {
       console.warn("Passing uniform object won't make any difference");
@@ -36,10 +37,20 @@ class TweakableShader {
 
     const generatedUniforms = this.parseGLSL(fragmentShader);
 
-    this.uniforms = [
-      ...defaultUniforms,
-      ...generatedUniforms.map((uniform) => uniform.name),
-    ];
+    if (timeUniform && timeUniform.name) {
+      this.uniforms = [
+        ...defaultUniforms,
+        ...generatedUniforms.map((uniform) => uniform.name),
+        timeUniform.name,
+      ];
+
+      this.createTimeUniform(timeUniform.name, this.scene);
+    } else {
+      this.uniforms = [
+        ...defaultUniforms,
+        ...generatedUniforms.map((uniform) => uniform.name),
+      ];
+    }
 
     this.initShaderMaterial();
 
@@ -200,6 +211,14 @@ class TweakableShader {
     });
 
     return babylonsUniforms;
+  }
+
+  createTimeUniform(uniform, scene) {
+    let t = 0;
+    scene.onBeforeRenderObservable.add(() => {
+      this.material.setFloat(uniform, t);
+      t++;
+    });
   }
 
   attachEventListeners(configsGUI, uniforms, babylonsUniforms) {
