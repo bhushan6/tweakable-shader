@@ -17,6 +17,7 @@ The package currently supports the following data types for uniforms:
 - `Vector2`
 - `float`
 - `int`
+- `time`
 
 ## Table of Contents
 
@@ -56,6 +57,10 @@ The TweakableShader class is used to create a shader material with GUI. It accep
 - `name`: It is first parameter, which is passed to shader material as name and also used as folder name in Tweakpane. So its needs to be unique for each instance (required).
 - `scene`: Babylon js scene in which shader material is being used
 - `options`: You can pass all the shader material options here the way you'll pass it to babylon's shader material, except vertex shader and fragment shader code should be passed using `vertexShader` and `fragmentShader` as shown above.
+  - `vertexShader`: glsl code of vertex shader as string
+  - `fragmentShader`: glsl code of fragment shader as string
+  - `timeUniform`: create time uniform if specified. Expected value `{name : <Name Of your time uniform>}`
+  - And all the other options that babylon js shader material takes
 
 ## GUI Configuration
 
@@ -129,10 +134,13 @@ const shaderMaterial = new TweakableShader("shader-material", scene, {
   fragmentShader: `precision highp float;
                 uniform vec3 color; // ts({ value: {r: 0, g: 255, b: 214, a: 0.5} })
                 uniform float brightness; // ts({ value: 1.0, min: 0, max:1.0, step: 0.1 })
+                uniform float uTime;
+
                 void main() {
-                    gl_FragColor = vec4(color , brightness);
+                    gl_FragColor = vec4(color , brightness * sin(uTime * 0.05));
                 }`,
   needAlphaBlending: true,
+  timeUniform: { name: "uTime" }, // creates uTime uniform that updates in render loop
 });
 
 box.material = shaderMaterial;
